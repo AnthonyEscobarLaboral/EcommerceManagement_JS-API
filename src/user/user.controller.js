@@ -220,6 +220,15 @@ export const changeClientByAdmin = async (req, res) => {
             });
         };
 
+        if (account.role === "ADMIN") {
+            if(uid !== admin._id.toString()){
+                return res.status(400).json({
+                    success: false,
+                    message: "Only the Admin creator account can edit this admin profile"
+                });
+            };
+        };
+
         const client = await User.findByIdAndUpdate(uid, newData, { new: true });
 
         res.status(200).json({

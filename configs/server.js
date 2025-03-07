@@ -8,7 +8,9 @@ import { hash } from "argon2";
 import { dbConnection } from "./dbMongoConnection.js";
 import authRoutes from "../src/auth/auth.routes.js";
 import User from "../src/user/user.model.js";
+import Category from "../src/category/category.model.js";
 import userRoutes from "../src/user/user.routes.js";
+import categoryRoutes from "../src/category/category.routes.js";
 
 const configs = (app) => {
     app.use(express.urlencoded({ extended: false }));
@@ -21,6 +23,7 @@ const configs = (app) => {
 const routes = (app) => {
     app.use("/EcommerceManager/v1/auth", authRoutes);
     app.use("/EcommerceManager/v1/user", userRoutes);
+    app.use("/EcommerceManager/v1/category", categoryRoutes);
 };
 
 const connectionDB = async () => {
@@ -56,6 +59,24 @@ export const adminAccountDefault = async () => {
     }
 };
 
+export const defaultCategory = async () => {
+    try {
+        const categoryFound = await Category.findOne({ name: "GENERAL" });
+        if (categoryFound) {
+            return console.log(`An default category already exists`);
+        }
+        const defaultCategory = {
+            name: "GENERAL"
+        }
+        await Category.create(defaultCategory);
+
+        return console.log(`Default category created succesfully`);
+
+    } catch (err) {
+        return console.error(`Error creating a default category:${err}`);
+    }
+};
+
 export const initServer = () => {
     const app = express();
     try {
@@ -63,6 +84,7 @@ export const initServer = () => {
         connectionDB();
         routes(app);
         adminAccountDefault();
+        defaultCategory();
         app.listen(process.env.PORT);
         console.log(`Server running on port ${process.env.PORT}`);
     } catch (err) {
