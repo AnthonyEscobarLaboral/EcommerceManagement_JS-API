@@ -1,11 +1,11 @@
-import { Router } from "express"
-import { register, login} from "./auth.controller.js"
-import { registerValidator, loginValidator } from "../middlewares/user-validators.js"
+import { Router } from "express";
+import { register, login } from "./auth.controller.js";
+import { registerValidator, loginValidator } from "../middlewares/user-validators.js";
 
-const router = Router()
+const router = Router();
 
-router.post("/register",registerValidator,register)
+router.post("/register", registerValidator, register);
 
-router.post("/login",loginValidator,login)
+router.post("/login", loginValidator, login);
 
-export default router
+export default router;

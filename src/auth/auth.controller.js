@@ -7,15 +7,20 @@ export const register = async (req, res) => {
     try {
         const userReceived = req.body;
 
-        const encryptedPassword = await hash(studentReceived.password);
+        const encryptedPassword = await hash(userReceived.password);
 
         userReceived.password = encryptedPassword;
 
-        await User.create(userReceived);
+        const user = await User.create(userReceived);
 
         return res.status(201).json({
             message: "User registered succesfully",
-            userReceived
+            account_created: {
+                completeName: user.completeName,
+                username: user.username,
+                role: user.role,
+                createdAt: user.createdAt
+            }
         });
     } catch (err) {
         return res.status(500).json({
@@ -26,35 +31,42 @@ export const register = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-    const { emailOrUsername, password } = req.body
-    try{
-        const user = await User.findOne({$or:[{email: emailOrUsername}, {username: emailOrUsername}]})
+    const { username, password } = req.body;
+    try {
+        const user = await User.findOne({username: username});
 
-        if(!user){
+        if (!user) {
             return res.status(400).json({
-                message: "Email or username not valid, try again",
-                error:"the user provided doesnt exists"
-            })
+                message: "username not found, try again",
+                error: "the user provided doesnt exists"
+            });
         }
 
-        const validPassword = await verify(user.password, password)
+        const validPassword = await verify(user.password, password);
 
-        if(!validPassword){
+        if (!validPassword) {
             return res.status(400).json({
                 message: "Password incorrect",
                 error: "the password you provided its incorrect"
-            })
+            });
         }
-        const token = await generateJWT(user._id)
+        const token = await generateJWT(user._id);
+
         return res.status(200).json({
             message: "Login successful",
-            user,
-            token:token
-        })
-    }catch(err){
+            account_information: {
+                completeName: user.completeName,
+                username: user.username,  
+                role: user.role,  
+                createdAt: user.createdAt,
+                updatedAt: user.updatedAt
+            },
+            token: token
+        });
+    } catch (err) {
         return res.status(500).json({
             message: "login failed, server error",
             error: err.message
-        })
+        });
     }
-}
+};
