@@ -1,5 +1,5 @@
 import Category from "./category.model.js";
-/*import Product from "../product/product.model.js";*/
+import Product from "../product/product.model.js";
 
 
 export const createCategory = async (req, res) => {
@@ -38,26 +38,45 @@ export const createCategory = async (req, res) => {
 
 export const getCategorys = async (req, res) => {
     try {
+        const account = req.userJwt;
         const { limit = 10, from = 0 } = req.query;
         const query = { status: true };
 
-        const [total, categorysFound] = await Promise.all([
+        const [total, categoriesFound] = await Promise.all([
             Category.countDocuments(query),
             Category.find(query)
                 .skip(Number(from))
                 .limit(Number(limit))
         ]);
 
+        if (account.role === "ADMIN") {
+            return res.status(200).json({
+                success: true,
+                message: "Products got successfully",
+                admin: {
+                    completeName: account.completeName,
+                    role: account.role,
+                },
+                total,
+                categoriesFound
+            });
+        };
+
+        const categoriesForClient = categoriesFound.map(category => ({
+            category_Name: category.name
+        }));
+
         return res.status(200).json({
             success: true,
-            message: "Categorys got successfully",
+            message: "Categories found successfully",
             total,
-            categorysFound
+            categories: categoriesForClient
         });
+
     } catch (err) {
         return res.status(500).json({
             success: false,
-            message: "Failed to get categorys",
+            message: "Failed to get categories",
             error: err.message
         });
     }
@@ -96,14 +115,14 @@ export const deleteCategory = async (req, res) => {
         const { cid } = req.params;
         const admin = req.userJwt;
 
-        const deleted = await Category.findByIdAndUpdate(cid, {name:"DELETED", status: false }, { new: true });
+        const deleted = await Category.findByIdAndDelete(cid);
 
         const defaultCategory = await Category.findOne({ name: "GENERAL" });
 
-       /* await Product.updateMany(
-            { category: cid }, 
+        await Product.updateMany(
+            { category: cid },
             { category: defaultCategory._id }
-        );*/
+        );
 
         return res.status(201).json({
             message: "Category deleted succesfully",
@@ -111,10 +130,7 @@ export const deleteCategory = async (req, res) => {
                 completeName: admin.completeName,
                 role: admin.role,
             },
-            category: {
-                categoryName: deleted.name,
-                status: deleted.status
-            }
+            category: deleted
         });
     } catch (err) {
         return res.status(500).json({

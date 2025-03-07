@@ -10,7 +10,7 @@ export const changeClientProfile = async (req, res) => {
         if (uid !== userJwt.toString()) {
             return res.status(400).json({
                 success: false,
-                message: "Only the account creator can delete this account"
+                message: "Only the account creator can edit this account"
             });
         }
 

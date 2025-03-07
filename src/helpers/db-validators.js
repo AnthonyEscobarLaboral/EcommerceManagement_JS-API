@@ -1,5 +1,6 @@
 import User from "../user/user.model.js";
 import Category from "../category/category.model.js"
+import Product from "../product/product.model.js"
 
 export const usernameExists = async (username = "") => {
     const exists = await User.findOne({ username });
@@ -35,9 +36,23 @@ export const categoryNameFound = async (name = " ") => {
     };
 };
 
+export const productNameFound = async (name = " ") => {
+    const found = await Product.findOne({name})
+    if(!found){
+        throw new Error(`The prodict name provided does not exists nor it could be found`)
+    };
+};
+
 export const categoryFound = async (cid = " ") => {
     const found = await Category.findById(cid)
     if(!found){
         throw new Error(`The category provided does not exists nor it could be found`)
+    };
+};
+
+export const productFound = async (pid = " ") => {
+    const found = await Product.findById(pid)
+    if(!found){
+        throw new Error(`The product provided does not exists nor it could be found`)
     };
 };

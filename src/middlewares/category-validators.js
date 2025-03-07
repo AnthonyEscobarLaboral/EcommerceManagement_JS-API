@@ -15,7 +15,6 @@ export const createCategoryValidator = [
 
 export const getCategorysValidator = [
     validateJWT,
-    hasRoles("ADMIN"),
     validarCampos,
     handleErrors
 ]
