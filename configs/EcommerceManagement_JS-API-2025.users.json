@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "67c8f3caf73b3e013ec5e466"
+  },
+  "completeName": "Braulio Jose Echeverria Montufar",
+  "username": "becheverria",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$gYy/0m/Oot4M7DoVq4fg6Q$0b4WLCfwb63SITyPttimnMpdNEmJ+JiAeOMQ7sS88UI",
+  "role": "ADMIN",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8f3d9f73b3e013ec5e469"
+  },
+  "completeName": "Anthony Escobar",
+  "username": "aescobar",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$rpsuhXCi16VaCDAXUbjfTg$wGwqXttXn2/7os9LfKsV8HxQ/cAf1RIELaIYYCfCSSE",
+  "role": "CLIENT",
+  "status": true,
+  "updatedAt": {
+    "$date": "2025-03-07T17:21:58.126Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca39eedc1639547a4f29ce"
+  },
+  "completeName": "Admin created ccount test",
+  "username": "account12",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$oIP0cWM0DGR5GCayoEUcjA$7Sx5jeBOe3gFw+6eL/DbPe+Kc5w1+Yb1oa9tSR3ztZ8",
+  "role": "CLIENT",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T00:12:30.096Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T00:12:30.096Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca3ad596edee4886782bb4"
+  },
+  "completeName": "Admin created ccount test",
+  "username": "account33",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$c/8qhOoNYn65WC+a+KQFnA$5eSnAMxBNklUpE4FWODQGvNevfihNeFgBdfY4blOgLE",
+  "role": "ADMIN",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T00:16:21.571Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T00:16:21.571Z"
+  }
+}]

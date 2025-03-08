@@ -1,0 +1,195 @@
+[{
+  "_id": {
+    "$oid": "67cb02f3b8314737025c097b"
+  },
+  "name": "GENERAL",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T14:30:11.545Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T14:30:11.545Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb04558b39ed2ee5e9a293"
+  },
+  "name": "DELETED",
+  "status": false,
+  "createdAt": {
+    "$date": "2025-03-07T14:36:05.269Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T14:47:21.709Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb04bc8b39ed2ee5e9a299"
+  },
+  "name": "FOOD",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T14:37:48.723Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T14:37:48.723Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb04c68b39ed2ee5e9a29c"
+  },
+  "name": "PERSONAL",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T14:37:58.376Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T14:37:58.376Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb05088b39ed2ee5e9a2a2"
+  },
+  "name": "CLOTHING",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T14:39:04.061Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T14:39:04.061Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb050d8b39ed2ee5e9a2a5"
+  },
+  "name": "FASHION",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T14:39:09.283Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T14:39:09.283Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb05188b39ed2ee5e9a2a8"
+  },
+  "name": "ACCESORIES",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T14:39:20.915Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T14:39:20.915Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb05278b39ed2ee5e9a2ab"
+  },
+  "name": "PHOTOGRAPHY",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T14:39:35.309Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T14:39:35.309Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb05358b39ed2ee5e9a2ae"
+  },
+  "name": "HOME & DECOR",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T14:39:49.559Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T14:39:49.559Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb05418b39ed2ee5e9a2b1"
+  },
+  "name": "HEALTH",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T14:40:01.874Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T14:40:01.874Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb05538b39ed2ee5e9a2b4"
+  },
+  "name": "SPORTS & OUTDOOR ACTIVITIES",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T14:40:19.056Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T14:40:19.056Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb055c8b39ed2ee5e9a2b7"
+  },
+  "name": "GAMING",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T14:40:28.848Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T14:40:28.848Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb05638b39ed2ee5e9a2ba"
+  },
+  "name": "TOYS",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T14:40:35.467Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T14:40:35.467Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb056e8b39ed2ee5e9a2bd"
+  },
+  "name": "MEDIA",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T14:40:46.600Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T14:40:46.600Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb05728b39ed2ee5e9a2c0"
+  },
+  "name": "BOOKS",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T14:40:50.417Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T14:40:50.417Z"
+  }
+}]

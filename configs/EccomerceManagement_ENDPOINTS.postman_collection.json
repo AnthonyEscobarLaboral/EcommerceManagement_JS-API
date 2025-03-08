@@ -1,0 +1,499 @@
+{
+	"info": {
+		"_postman_id": "8db21269-682c-4251-9c52-ca494fc6df87",
+		"name": "EccomerceManagement_ENDPOINTS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37668756"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"completeName\": \"Anthony Josue Escobar Ponce\",\r\n  \"username\": \"aescobar\",\r\n  \"password\": \"UserPass@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"aescobar\",\r\n  \"password\": \"UserPass@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "login admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"becheverria\",\r\n  \"password\": \"AdminPass@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "update Client",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNkOWY3M2IzZTAxM2VjNWU0NjkiLCJpYXQiOjE3NDEyMjc5MjQsImV4cCI6MTc0MTIzMTUyNH0.aGdX0hPtcbyiGVoEkz4SwPIlyJX_oWRDw23lWti_f_Q"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"completeName\": \"Anthony Updated\",\r\n  \"username\": \"aescobar updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/user/updateClientProfile/67c8f3d9f73b3e013ec5e469"
+					},
+					"response": []
+				},
+				{
+					"name": "change client password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNkOWY3M2IzZTAxM2VjNWU0NjkiLCJpYXQiOjE3NDEyMjc5MjQsImV4cCI6MTc0MTIzMTUyNH0.aGdX0hPtcbyiGVoEkz4SwPIlyJX_oWRDw23lWti_f_Q"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"newPassword\": \"UserPass@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/user/updateClientPassword/67c8f3d9f73b3e013ec5e469"
+					},
+					"response": []
+				},
+				{
+					"name": "delete client profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNkOWY3M2IzZTAxM2VjNWU0NjkiLCJpYXQiOjE3NDEyMjc5MjQsImV4cCI6MTc0MTIzMTUyNH0.aGdX0hPtcbyiGVoEkz4SwPIlyJX_oWRDw23lWti_f_Q"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"ClientPass@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/user/deleteClientAccount/67c8f3d9f73b3e013ec5e469"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Administrator",
+			"item": [
+				{
+					"name": "change role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNjYWY3M2IzZTAxM2VjNWU0NjYiLCJpYXQiOjE3NDEzMDYyNDYsImV4cCI6MTc0MTM5MjY0Nn0.bBTCOPp29r1EIwXmDs2ATwsKE8Ud8XHFxWb8BCAM_jw"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"newRole\": \"CLIENT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/user/changeRole/67c8f3d9f73b3e013ec5e469"
+					},
+					"response": []
+				},
+				{
+					"name": "create/add acount",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNjYWY3M2IzZTAxM2VjNWU0NjYiLCJpYXQiOjE3NDEzMDYyNDYsImV4cCI6MTc0MTM5MjY0Nn0.bBTCOPp29r1EIwXmDs2ATwsKE8Ud8XHFxWb8BCAM_jw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"completeName\": \"Admin created ccount test\",\r\n    \"username\": \"account33\",\r\n    \"password\": \"UserPass@123\",\r\n    \"role\": \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/user/adminAddNewAccount"
+					},
+					"response": []
+				},
+				{
+					"name": "edit account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNjYWY3M2IzZTAxM2VjNWU0NjYiLCJpYXQiOjE3NDEzNjgwMzYsImV4cCI6MTc0MTQ1NDQzNn0.6w8mAPOLApkdh8Ri9Tjh9jivVr03_Iauj2psS6Yq3YE"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"completeName\": \"Anthony Escobar\",\r\n  \"username\": \"aescobar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/user/adminEditAccount/67c8f3d9f73b3e013ec5e469"
+					},
+					"response": []
+				},
+				{
+					"name": "delete account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNjYWY3M2IzZTAxM2VjNWU0NjYiLCJpYXQiOjE3NDEzMDYyNDYsImV4cCI6MTc0MTM5MjY0Nn0.bBTCOPp29r1EIwXmDs2ATwsKE8Ud8XHFxWb8BCAM_jw"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"adminPassword\": \"AdminPass@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/user/adminDeleteAccount/67c8f3d9f73b3e013ec5e469"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categorys",
+			"item": [
+				{
+					"name": "get categorys",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNkOWY3M2IzZTAxM2VjNWU0NjkiLCJpYXQiOjE3NDEzNjgxMjYsImV4cCI6MTc0MTQ1NDUyNn0.9V5kRJgWxTAoZgMzqKC_StnxHnO5rBggib_AqAIcs04"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/category/getCategorys"
+					},
+					"response": []
+				},
+				{
+					"name": "new category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNjYWY3M2IzZTAxM2VjNWU0NjYiLCJpYXQiOjE3NDEzMDYyNDYsImV4cCI6MTc0MTM5MjY0Nn0.bBTCOPp29r1EIwXmDs2ATwsKE8Ud8XHFxWb8BCAM_jw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pet supplies\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/category/newCategory"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNjYWY3M2IzZTAxM2VjNWU0NjYiLCJpYXQiOjE3NDEzMDYyNDYsImV4cCI6MTc0MTM5MjY0Nn0.bBTCOPp29r1EIwXmDs2ATwsKE8Ud8XHFxWb8BCAM_jw"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newCategoryName\": \"ELECTRONICS & TECHNOLOGY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/category/updateCategory/67cb04558b39ed2ee5e9a293"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNjYWY3M2IzZTAxM2VjNWU0NjYiLCJpYXQiOjE3NDEzMDYyNDYsImV4cCI6MTc0MTM5MjY0Nn0.bBTCOPp29r1EIwXmDs2ATwsKE8Ud8XHFxWb8BCAM_jw"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/category/deleteCategory/67cb04558b39ed2ee5e9a293"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "add product BY ADMIN",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNjYWY3M2IzZTAxM2VjNWU0NjYiLCJpYXQiOjE3NDEzNjgwMzYsImV4cCI6MTc0MTQ1NDQzNn0.6w8mAPOLApkdh8Ri9Tjh9jivVr03_Iauj2psS6Yq3YE"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Boxing gloves\",\r\n    \"category\": \"67cb05538b39ed2ee5e9a2b4\",\r\n    \"price\": 600,\r\n    \"totalProduct\": 98\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/product/newProduct"
+					},
+					"response": []
+				},
+				{
+					"name": "edit product BY ADMIN",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNjYWY3M2IzZTAxM2VjNWU0NjYiLCJpYXQiOjE3NDEzNjgwMzYsImV4cCI6MTc0MTQ1NDQzNn0.6w8mAPOLApkdh8Ri9Tjh9jivVr03_Iauj2psS6Yq3YE"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Leche Lala actualizar\",\r\n    \"category\": \"67cb04bc8b39ed2ee5e9a299\",\r\n    \"price\": 55,\r\n    \"totalProduct\": 66\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/product/editProduct/67cb2c7bb7e92ec61a301cac"
+					},
+					"response": []
+				},
+				{
+					"name": "delete product BY ADMIN",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNjYWY3M2IzZTAxM2VjNWU0NjYiLCJpYXQiOjE3NDEzNjgwMzYsImV4cCI6MTc0MTQ1NDQzNn0.6w8mAPOLApkdh8Ri9Tjh9jivVr03_Iauj2psS6Yq3YE"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/product/deleteProduct/67cb2c7bb7e92ec61a301cac"
+					},
+					"response": []
+				},
+				{
+					"name": "sold outs BY ADMIN",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNjYWY3M2IzZTAxM2VjNWU0NjYiLCJpYXQiOjE3NDEzNjgwMzYsImV4cCI6MTc0MTQ1NDQzNn0.6w8mAPOLApkdh8Ri9Tjh9jivVr03_Iauj2psS6Yq3YE"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/product/getSoldOuts"
+					},
+					"response": []
+				},
+				{
+					"name": "products catalog  BY BOTH",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNkOWY3M2IzZTAxM2VjNWU0NjkiLCJpYXQiOjE3NDEzNjkwOTcsImV4cCI6MTc0MTQ1NTQ5N30.z1-JkulAthM-2KuTblMynp6eyeIc0koUY8HgWAFwQm8"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/product/products"
+					},
+					"response": []
+				},
+				{
+					"name": "find products BY BOTH",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNkOWY3M2IzZTAxM2VjNWU0NjkiLCJpYXQiOjE3NDEzNjkwOTcsImV4cCI6MTc0MTQ1NTQ5N30.z1-JkulAthM-2KuTblMynp6eyeIc0koUY8HgWAFwQm8"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pid\": \"67cb2cd8b7e92ec61a301cb4\",\r\n    \"name\": \"WATCH econova\",\r\n    \"category\": \"67cb05188b39ed2ee5e9a2a8\",\r\n    \"mostSold\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/product/findProducts"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shopping Cart",
+			"item": [
+				{
+					"name": "add Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNkOWY3M2IzZTAxM2VjNWU0NjkiLCJpYXQiOjE3NDEzOTUwOTIsImV4cCI6MTc0MTQ4MTQ5Mn0.S7XCfm_3lEP6s4Cr0Xs8eQsU0p-hHBDM7SN7Td5Rrt8"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"products\": [\r\n        {\r\n            \"product\": \"67cb2d17b7e92ec61a301cb8\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"product\": \"67cb2cd8b7e92ec61a301cb4\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/cart/newCart"
+					},
+					"response": []
+				},
+				{
+					"name": "buy cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjNkOWY3M2IzZTAxM2VjNWU0NjkiLCJpYXQiOjE3NDEzOTUwOTIsImV4cCI6MTc0MTQ4MTQ5Mn0.S7XCfm_3lEP6s4Cr0Xs8eQsU0p-hHBDM7SN7Td5Rrt8"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": "http://127.0.0.1:3001/EcommerceManager/v1/cart/shoppingCartBought"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

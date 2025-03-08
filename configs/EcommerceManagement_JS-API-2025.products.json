@@ -1,0 +1,76 @@
+[{
+  "_id": {
+    "$oid": "67cb2c7bb7e92ec61a301cac"
+  },
+  "name": "Leche Lala",
+  "category": {
+    "$oid": "67cb04bc8b39ed2ee5e9a299"
+  },
+  "price": 55,
+  "status": true,
+  "sold": 0,
+  "totalProduct": 66,
+  "createdAt": {
+    "$date": "2025-03-07T17:27:23.966Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T17:35:03.557Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb2cb3b7e92ec61a301cb0"
+  },
+  "name": "Kity Pinky makeup",
+  "category": {
+    "$oid": "67cb050d8b39ed2ee5e9a2a5"
+  },
+  "price": 82,
+  "status": true,
+  "sold": 23,
+  "totalProduct": 0,
+  "createdAt": {
+    "$date": "2025-03-07T17:28:19.889Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T17:28:19.889Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb2cd8b7e92ec61a301cb4"
+  },
+  "name": "WATCH econova",
+  "category": {
+    "$oid": "67cb05188b39ed2ee5e9a2a8"
+  },
+  "price": 2500,
+  "status": true,
+  "sold": 0,
+  "totalProduct": 26,
+  "createdAt": {
+    "$date": "2025-03-07T17:28:56.163Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T17:28:56.163Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb2d17b7e92ec61a301cb8"
+  },
+  "name": "Tv teloving",
+  "category": {
+    "$oid": "67cb056e8b39ed2ee5e9a2bd"
+  },
+  "price": 2500,
+  "status": true,
+  "sold": 0,
+  "totalProduct": 26,
+  "createdAt": {
+    "$date": "2025-03-07T17:29:59.713Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T17:29:59.713Z"
+  }
+}]
