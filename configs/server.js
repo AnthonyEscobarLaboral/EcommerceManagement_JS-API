@@ -12,6 +12,8 @@ import Category from "../src/category/category.model.js";
 import userRoutes from "../src/user/user.routes.js";
 import categoryRoutes from "../src/category/category.routes.js";
 import productRoutes from "../src/product/product.routes.js";
+import cartRoutes from "../src/shoppingCart/cart.routes.js";
+import { swaggerDocs, swaggerUi } from "./swagger.js";
 
 const configs = (app) => {
     app.use(express.urlencoded({ extended: false }));
@@ -26,6 +28,8 @@ const routes = (app) => {
     app.use("/EcommerceManager/v1/user", userRoutes);
     app.use("/EcommerceManager/v1/category", categoryRoutes);
     app.use("/EcommerceManager/v1/product", productRoutes);
+    app.use("/EcommerceManager/v1/cart", cartRoutes);
+    app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 };
 
 const connectionDB = async () => {

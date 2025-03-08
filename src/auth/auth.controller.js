@@ -1,5 +1,6 @@
 import { hash, verify } from "argon2";
 import User from "../user/user.model.js";
+import Cart from "../shoppingCart/cart.model.js";
 import { generateJWT } from "../helpers/generate-jwt.js";
 
 
@@ -52,6 +53,8 @@ export const login = async (req, res) => {
         }
         const token = await generateJWT(user._id);
 
+        const shoppingCarts = await Cart.find({ client: user._id, status: "BOUGHT" }).populate('products.product');
+
         return res.status(200).json({
             message: "Login successful",
             account_information: {
@@ -61,7 +64,8 @@ export const login = async (req, res) => {
                 createdAt: user.createdAt,
                 updatedAt: user.updatedAt
             },
-            token: token
+            token: token,
+            Bought: shoppingCarts
         });
     } catch (err) {
         return res.status(500).json({
